@@ -11,20 +11,21 @@ import Footer from './components/Footer'
 
 class App extends React.Component {
   state = {
-    show: 'menu-btn'
+    show: false
   }
 
   toggleClass = () => {
     this.setState({
-      show: 'menu-btn show'
+      show: !this.state.show
     })
   }
   render() {
-    const { show } = this.state
+    // const { show } = this.state
+    console.log(this.state.show)
     return (
       <div>
         <div className="container">
-          <Navigation value={show} onClick={this.toggleClass} />
+          <Navigation value={this.state.show} onClick={this.toggleClass} />
           <Header />
           <HomeCards1 />
           <XboxSection />

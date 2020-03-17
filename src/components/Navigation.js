@@ -1,18 +1,17 @@
 import React from 'react'
 
 const Navigation = (props) => {
+  console.log(props)
   return (
     <div>
-      <div
-        className={props.value !== 'menu-btn' ? 'menu-btn show' : 'menu-btn'}
-      >
+      <div className="menu-btn" onClick={props.onClick}>
         <i className="fas fa-bars fa-2x"></i>
       </div>
 
       {/*  Navigation  */}
       <nav className="main-nav">
         <img src="img/logo.png" alt="Microsoft" className="logo" />
-        <ul className="main-menu">
+        <ul className={props.value ? 'main-menu show' : 'main-menu'}>
           <li>
             <a href="#">Office</a>
           </li>
